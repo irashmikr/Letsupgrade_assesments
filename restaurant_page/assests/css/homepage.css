@@ -1,0 +1,337 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.header {
+  background-color: dodgerblue;
+  height: 60px;
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+}
+
+.nav-bar {
+  display: flex;
+  height: 60px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-bar .nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-list .nav-list-item {
+  padding: 0px 20px;
+}
+
+.nav-list .nav-list-item .nav-list-item-content {
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+}
+
+
+.nav-bar .nav-btns button {
+  height: 38px;
+  width: 78px;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+}
+
+.nav-bar .nav-btns button:hover {
+  background-color: white;
+  color: dodgerblue;
+}
+
+/* slider start */
+.slider-container {
+  background: linear-gradient(149deg, rgb(0 180 255) 0%, rgb(0 10 255 / 70%) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.slider {
+  width: 100%;
+  /* max-width: 600px; */
+  /* height: 400px; */
+  height: 90vh;
+  margin: 20px;
+  text-align: center;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.slides {
+  display: flex;
+  overflow-x: scroll;
+  position: relative;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+.slide:nth-of-type(even) {
+  background-color: rgb(250, 246, 212);
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 100%;
+  /* height: 400px; */
+  height: 90vh;
+  margin-right: 0px;
+  box-sizing: border-box;
+  background: white;
+  transform-origin: center center;
+  transform: scale(1);
+  scroll-snap-align: center;
+}
+
+.slide__text {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.slide a {
+  position: absolute;
+  top: 48%;
+  width: 35px;
+  height: 35px;
+  border: solid black;
+  border-width: 0 4px 4px 0;
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+a.slide__prev {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  left: 5%;
+}
+
+a.slide__next{
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  right: 5%;
+}
+
+/* slider end */
+/* banner */
+/* .banner-section {
+  height: 90vh;
+  background-color: pink;
+} */
+
+/* our services */
+.our-services {
+  height: 100%;
+  margin-top: 100px;
+  padding-top: 70px;
+}
+
+.our-services h1 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.our-services-data {
+  padding: 24px 0px;
+  height: 100%;
+  width: 80%;
+  margin: auto;
+  /* background-color: aqua; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+article {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  /* for fliping */
+  background-color: transparent;
+  perspective: 1000px;
+  max-height: 370px;
+  min-height: 250px;
+}
+
+/* This container is needed to position the front and back side */
+.description {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.main-card:hover .description {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.front-of-card,
+.menu {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.front-of-card {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.menu {
+  background-color:#bbb;
+  color: black;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+/* 
+.our-services .our-services-data {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin: 34px 80px;
+    column-gap: 20px;
+    row-gap: 20px;
+} */
+
+/* .our-services .our-services-data article{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    /*  */
+/* background-color: transparent; */
+/* perspective: 1000px; */
+/* width: 10rem; */
+/* } */
+
+
+
+/* This container is needed to position the front and back side */
+/* .flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+} */
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+/* .our-services-data:hover article {
+    transform: rotateY(180deg);
+  } */
+
+/* Position the front and back side */
+/* .description, .menu{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; Safari */
+/* backface-visibility: hidden;
+  } */
+
+/*  */
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+/* .main-card {
+  background-color: transparent;
+  width: 18rem;
+  height: 9rem; */
+/* height: 200px; */
+/* border: 1px solid #f1f1f1; */
+/* perspective: 1000px; */
+/* Remove this if you don't want the 3D effect */
+/* } */
+
+/* This container is needed to position the front and back side */
+/* .description {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+} */
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+/* .main-card:hover .description {
+  transform: rotateY(180deg);
+} */
+
+/* Position the front and back side */
+/* .front-of-card,
+.menu {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+/* backface-visibility: hidden; */
+/* } */
+/* Style the front side (fallback if image is missing) */
+/* .front-of-card {
+  background-color: #bbb;
+  color: black;
+} */
+
+/* Style the back side */
+/* .menu {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+} */
+
+/*  */
+footer {
+  padding: 10px 0px;
+  /* height: 30px; */
+  background-color: gray;
+}
+
+footer p {
+  color: white;
+  text-align: center;
+}
