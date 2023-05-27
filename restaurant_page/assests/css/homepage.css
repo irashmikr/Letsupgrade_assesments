@@ -75,6 +75,7 @@ html {
   overflow: hidden;
   position: relative;
 }
+
 .slides {
   display: flex;
   overflow-x: scroll;
@@ -82,6 +83,7 @@ html {
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
 }
+
 .slide:nth-of-type(even) {
   background-color: rgb(250, 246, 212);
 }
@@ -125,7 +127,7 @@ a.slide__prev {
   left: 5%;
 }
 
-a.slide__next{
+a.slide__next {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   right: 5%;
@@ -209,16 +211,29 @@ article {
 .front-of-card {
   background-color: #bbb;
   color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+}
+
+.food-price {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 /* Style the back side */
 .menu {
-  background-color:#bbb;
+  background-color: #bbb;
   color: black;
   transform: rotateY(180deg);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.food-description {
+  padding: 20px;
 }
 
 
